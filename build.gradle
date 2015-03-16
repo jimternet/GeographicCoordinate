@@ -1,8 +1,29 @@
 apply plugin: "eclipse"
+apply plugin: "java"
 
-apply from: buildScriptsDir + "/build_java_lib.gradle"
-//apply from: publishScriptsDir + "/publish.gradle"
+repositories {
+    mavenCentral()
+    maven { url = 'http://repo.spring.io/milestone' }
+}
+
+
+jar.archiveName="thingie.jar"
+
+
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
 
 dependencies {
-   testCompile group: "junit", name: "junit", version: "3.8+"
+    // the test (junit)
+		testCompile 'junit:junit:4.10'
+	
+
+}
+
+test {
+    testLogging {
+        // Show that tests are run in the command-line output
+        events 'started', 'passed'
+    }
 }

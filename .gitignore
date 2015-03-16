@@ -2,3 +2,14 @@
 /.settings
 /bin
 /build
+
+.settings/
+.loadpath
+.classpath
+.project`
+
+
+
+
+
+
